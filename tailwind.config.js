@@ -1,0 +1,35 @@
+module.exports = {
+  mode: "jit",
+  content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
+  darkMode: "class",
+  theme: {
+    screens: { md: { max: "1050px" }, sm: { max: "550px" } },
+    extend: {
+      colors: {
+        gray: {
+          50: "#f7fbfd",
+          100: "#f5f5f5",
+          200: "#eeeeee",
+          400: "#b3b3b3",
+          600: "#838383",
+          700: "#696969",
+          "50_19": "#f7fbfd19",
+          "400_4c": "#bababa4c",
+          "200_01": "#e5e8e9",
+        },
+        teal: { 400: "#289976" },
+        yellow: { 100: "#fff2d1" },
+        orange: { 50: "#f5f5dc", A100: "#ffd178", A100_99: "#ffd17899" },
+        white: { A700: "#ffffff" },
+        black: { 900: "#000000", "900_7f": "#0000007f", "900_4c": "#0000004c" },
+        red: { 200: "#ff9fa2", A700_4c: "#fa00004c" },
+        cyan: { 200: "#64e1e7" },
+        blue_gray: { 400: "#898989", "100_4c": "#d9d9d94c" },
+      },
+      boxShadow: { xs: "1px 4px  4px 0px #00000019" },
+      fontFamily: { opensans: "Open Sans", lora: "Lora" },
+      backgroundImage: { gradient: "linear-gradient(90deg, #e3e3e3,#e3e3e3,#e4e4e4e0,#ffffff00)" },
+    },
+  },
+  plugins: [require("@tailwindcss/forms")],
+};
