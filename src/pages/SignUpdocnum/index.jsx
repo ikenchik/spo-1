@@ -4,7 +4,7 @@ import { Button, Input, Text, Img, Heading } from "../../components";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 
 
-export default function SignUPpacnumPage() {
+export default function SignUPdocnumPage() {
   return (
     <>
       <Helmet>
@@ -21,14 +21,14 @@ export default function SignUPpacnumPage() {
         </div>
         <div className="flex justify-between items-start w-[20%] md:w-full gap-5">
           <div className="flex flex-col items-center w-[25%] gap-[9px]">
-            <Img src="images/pac_icon.svg" alt="play_one" className="h-[90px] mb-1" />
-          <Heading size="xs" as="h1" className="!text-teal-400">
+            <a href="./SignUPpacnum"><Img src="images/pac_reg_2.svg" alt="play_one" className="h-[90px] mb-1" /></a>
+          <Heading size="xl" as="p" className="!text-blue_gray-400">
             Пациент
           </Heading>
           </div>
           <div className="flex flex-col items-center w-[33%] gap-4">
-            <a href="SignUPdocnum"><Img src="images/img_floating_icon.svg" alt="floatingicon" className="h-[90px] w-full md:h-auto" /></a>
-            <Text size="xl" as="p" className="!text-blue_gray-400">
+            <Img src="images/doc_reg.svg" alt="floatingicon" className="h-[90px] w-full md:h-auto" />
+            <Text size="xs" as="h1" className="!text-teal-400">
               Врач
             </Text>
           </div>
@@ -39,8 +39,8 @@ export default function SignUPpacnumPage() {
           selectedTabPanelClassName="relative tab-panel--selected"
         >
           <TabList className="flex justify-center gap-[135px] p-[5px] md:gap-5 bg-gray-100 flex-wrap rounded-[10px]">
-            <Tab className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Телефон</Tab>
-            <a href="./SignUPpacemail" className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Email</a>
+            <a href="./SignUPdocnum" className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Телефон</a>
+            <Tab className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Email</Tab>
           </TabList>
           {[...Array(2)].map((_, index) => (
             <TabPanel key={`tab-panel${index}`} className="items-center absolute">

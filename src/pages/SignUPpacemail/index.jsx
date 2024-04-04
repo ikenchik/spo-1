@@ -4,7 +4,7 @@ import { Button, Input, Text, Img, Heading } from "../../components";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 
 
-export default function SignUPpacnumPage() {
+export default function SignUPpacemailPage() {
   return (
     <>
       <Helmet>
@@ -27,7 +27,7 @@ export default function SignUPpacnumPage() {
           </Heading>
           </div>
           <div className="flex flex-col items-center w-[33%] gap-4">
-            <a href="SignUPdocnum"><Img src="images/img_floating_icon.svg" alt="floatingicon" className="h-[90px] w-full md:h-auto" /></a>
+            <a href="./SignUPdocemail"><Img src="images/img_floating_icon.svg" alt="floatingicon" className="h-[90px] w-full md:h-auto" /></a>
             <Text size="xl" as="p" className="!text-blue_gray-400">
               Врач
             </Text>
@@ -39,22 +39,19 @@ export default function SignUPpacnumPage() {
           selectedTabPanelClassName="relative tab-panel--selected"
         >
           <TabList className="flex justify-center gap-[135px] p-[5px] md:gap-5 bg-gray-100 flex-wrap rounded-[10px]">
-            <Tab className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Телефон</Tab>
-            <a href="./SignUPpacemail" className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Email</a>
+            <a href="./SignUPpacnum" className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Телефон</a>
+            <Tab className="flex justify-center mr-[10px] md:mr-0 text-teal-400 text-xl font-semibold">Email</Tab>
           </TabList>
           {[...Array(2)].map((_, index) => (
             <TabPanel key={`tab-panel${index}`} className="items-center absolute">
               <div className="w-full">
                 <div className="flex flex-col gap-[22px]">
                   <div className="flex sm:flex-col justify-center gap-[21px]">
-                    <div className="flex gap-[135px] p-[10px] md:gap-5 bg-gray-100 flex-wrap rounded-[10px] blue_gray_100_4c">
-                      +7
-                    </div>
                     <Input
                       size="sm"
                       shape="round"
-                      name="номер_телефона"
-                      placeholder={`Номер телефона`}
+                      name="элетронная_почта"
+                      placeholder={`Электронная почта`}
                       className="sm:pr-5 !text-gray-400 border-gray-200_01 border border-solid flex-grow"
                     />
                   </div>

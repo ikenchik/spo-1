@@ -26,7 +26,7 @@ module.exports = {
         cyan: { 200: "#64e1e7" },
         blue_gray: { 400: "#898989", "100_4c": "#d9d9d94c" },
       },
-      boxShadow: { xs: "1px 4px  4px 0px #00000019" },
+      boxShadow: { xs: "1px 4px 4px 0px #00000019" },
       fontFamily: { opensans: "Open Sans", lora: "Lora" },
       backgroundImage: { gradient: "linear-gradient(90deg, #e3e3e3,#e3e3e3,#e4e4e4e0,#ffffff00)" },
     },

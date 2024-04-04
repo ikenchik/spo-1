@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
-import { Text, Button, Img, Input, GoogleMap, Heading } from "../../components";
+import { Text, Button, Img, Input, Heading } from "../../components";
 
 export default function MainPage() {
   const [searchBarValue1, setSearchBarValue1] = React.useState("");
@@ -12,21 +12,21 @@ export default function MainPage() {
         <title>Medprima</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className="w-full border-gray-50_19 border border-solid bg-gray-50">
-        <header className="p-[22px] sm:p-5 bg-teal-400">
-          <div className="flex md:flex-col justify-between items-center w-full gap-5 mx-auto max-w-[1330px]">
-            <div className="flex justify-center w-[8%] md:w-full">
-              <div className="h-[105px] w-full md:h-auto relative">
-                <Img src="images/img_vector_white_a700_105x113.svg" alt="vector_one" className="h-[105px]" />
-                <div className="flex flex-col items-start w-[86%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 m-auto absolute">
-                  <Img src="images/img_vector.svg" alt="vector_three" className="h-[23px] ml-[11px] md:ml-0" />
+      <div className="w-full border border-solid border-gray-50_19 bg-gray-50">
+        <header className="flex items-center justify-center bg-teal-400 p-[22px] sm:p-5">
+          <div className="mx-auto flex w-full max-w-[1330px] items-center justify-between gap-5 md:flex-col">
+            <div className="flex w-[8%] justify-center md:w-full">
+              <div className="relative h-[105px] w-full md:h-auto">
+                <Img src="images/img_vector_white_a700_105x113.svg" alt="vector_one" className="h-[105px] w-full" />
+                <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-[86%] flex-col items-start gap-[5px]">
+                  <Img src="images/img_vector.svg" alt="vector_three" className="ml-[11px] h-[23px] w-[78%] md:ml-0" />
                   <Text size="xl" as="p" className="!font-lora !font-medium">
                     МЕДПРИМА
                   </Text>
                 </div>
               </div>
             </div>
-            <ul className="flex self-start mt-[30px] gap-[45px] flex-wrap">
+            <ul className="mt-[30px] flex flex-wrap gap-[45px] self-start">
               <li>
                 <a href="#" className="self-start">
                   <Text size="3xl" as="p">
@@ -63,26 +63,28 @@ export default function MainPage() {
                 </a>
               </li>
             </ul>
-            <div className="flex justify-between w-[6%] md:w-full gap-5">
-              <a href="./SignUPpacnum"><Img src="images/img_lock.svg" alt="lock_one" className="h-[23px]" /></a>
-              <a href="#"><Img src="images/img_search.svg" alt="search_one" className="h-[23px] w-[23px]" /></a>
+            <div className="flex w-[6%] justify-between gap-5 md:w-full">
+              <a href="./SignUPpacnum" target="_blank">
+                <Img src="images/img_lock.svg" alt="lock_one" className="h-[23px]" />
+              </a>
+              <Img src="images/img_search.svg" alt="search_one" className="h-[23px] w-[23px]" />
             </div>
           </div>
         </header>
         <div className="mt-16">
-          <div>
-            <div className="h-[555px] md:h-auto pt-[21px] pl-[21px] sm:pt-5 sm:pl-5 bg-yellow-100 relative">
-              <div className="flex md:flex-col justify-center items-start w-full max-w-[1392px]">
-                <Heading size="md" as="h1" className="w-[49%] md:w-full mt-[30px] right-[35px] z-[1] relative">
+          <div className="flex flex-col items-center">
+            <div className="relative h-[555px] self-stretch bg-yellow-100 pl-[21px] pt-[21px] md:h-auto sm:pl-5 sm:pt-5">
+              <div className="flex w-full max-w-[1392px] items-start justify-center md:flex-col">
+                <Heading size="md" as="h1" className="relative right-[35px] z-[1] mt-[30px] w-[49%] md:w-full">
                   МедПрима — клиника для детей и взрослых
                 </Heading>
                 <Img
                   src="images/img_36_transformed_1.png"
                   alt="36transformed"
-                  className="w-[51%] md:w-full ml-[-115px] top-[45px] md:ml-0 relative object-cover"
+                  className="relative top-[45px] ml-[-115px] h-[534px] w-[51%] object-cover md:ml-0 md:w-full"
                 />
               </div>
-              <div className="flex flex-col items-start gap-[30px] bottom-[24%] left-[3%] m-auto absolute">
+              <div className="absolute bottom-[24%] left-[3%] m-auto flex flex-col items-start gap-[30px]">
                 <Text size="4xl" as="p" className="!text-black-900">
                   Круглосуточный прием
                 </Text>
@@ -94,8 +96,8 @@ export default function MainPage() {
                 </Text>
               </div>
             </div>
-            <div className="flex flex-col items-start w-full mt-[50px] pt-1.5 gap-[42px] mx-auto md:p-5 max-w-[1285px]">
-              <Text size="8xl" as="p" className="!text-black-900 !font-lora">
+            <div className="mx-auto mt-[50px] flex w-full max-w-[1285px] flex-col items-start gap-[42px] pt-1.5 md:p-5">
+              <Text size="8xl" as="p" className="!font-lora !text-black-900">
                 Предоставляемые услуги
               </Text>
               <Input
@@ -106,23 +108,27 @@ export default function MainPage() {
                 value={searchBarValue1}
                 onChange={(e) => setSearchBarValue1(e)}
                 suffix={
-                  <div className="flex justify-center items-center w-[23px] h-[23px]">
+                  <div className="flex h-[23px] w-[23px] items-center justify-center">
                     {searchBarValue1?.length > 0 ? (
                       <CloseSVG onClick={() => setSearchBarValue1("")} height={23} width={23} />
                     ) : (
-                      <Img src="images/img_search_black_900.svg" alt="search" className="cursor-pointer" />
+                      <Img
+                        src="images/img_search_black_900.svg"
+                        alt="search"
+                        className="h-[23px] w-[23px] cursor-pointer"
+                      />
                     )}
                   </div>
                 }
-                className="self-stretch gap-[35px] sm:px-5 !text-black-900_7f border-black-900 border border-solid"
+                className="gap-[35px] self-stretch border border-solid border-black-900 !text-black-900_7f sm:px-5"
               />
             </div>
-            <div className="w-full mt-[70px] py-1 mx-auto md:p-5 max-w-[1157px]">
-              <div className="flex flex-col items-start mb-[33px]">
-                <Text size="6xl" as="p" className="!text-black-900 !font-lora">
+            <div className="mx-auto mt-[70px] flex w-full max-w-[1157px] justify-center py-1 md:p-5">
+              <div className="mb-[33px] flex w-full flex-col items-start">
+                <Text size="6xl" as="p" className="!font-lora !text-black-900">
                   Популярные услуги
                 </Text>
-                <div className="flex justify-between w-[68%] md:w-full mt-[41px] gap-5 flex-wrap">
+                <div className="mt-[41px] flex w-[68%] flex-wrap justify-between gap-5 md:w-full">
                   <Text size="3xl" as="p" className="self-end !text-black-900">
                     Гастроскопия
                   </Text>
@@ -133,12 +139,12 @@ export default function MainPage() {
                     Рентген
                   </Text>
                 </div>
-                <div className="flex md:flex-col justify-between items-start w-[64%] md:w-full mt-[21px] gap-5">
+                <div className="mt-[21px] flex w-[64%] items-start justify-between gap-5 md:w-full md:flex-col">
                   <Text size="3xl" as="p" className="!text-black-900">
                     Колоноскопия
                   </Text>
-                  <div className="flex sm:flex-col justify-between items-start w-[62%] md:w-full gap-5">
-                    <Text size="3xl" as="p" className="w-[74%] sm:w-full !text-black-900">
+                  <div className="flex w-[62%] items-start justify-between gap-5 md:w-full sm:flex-col">
+                    <Text size="3xl" as="p" className="w-[74%] !text-black-900 sm:w-full">
                       <>
                         МРТ (магнитно-резонансная
                         <br />
@@ -150,13 +156,40 @@ export default function MainPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex md:flex-col self-stretch justify-between items-center mt-[84px] ml-1 gap-5 md:ml-0">
-                  <div className="flex justify-center w-[68%] md:w-full">
-                    <div className="flex flex-col items-start w-full">
-                      <Text size="6xl" as="p" className="!text-black-900 !font-lora">
+                <div className="ml-1 mt-[84px] flex items-center justify-between gap-5 self-stretch md:ml-0 md:flex-col">
+                  <div className="flex w-[68%] justify-center md:w-full">
+                    <div className="flex w-full flex-col items-start">
+                      <Text size="6xl" as="p" className="!font-lora !text-black-900">
                         Популярные направления
                       </Text>
-                      <div className="flex md:flex-col self-stretch justify-between items-center mt-[54px] gap-5">
+                      <div>
+                        <div className="flex md: flex-col self-stretch justify-between mt-[54px] gap-5">
+                          <Text size="3xl" as="p" className="self-start !text-black-900">
+                            Акушерство-гинекология
+                          </Text>
+                          <Text size="3xl" as="p" className="self-start !text-black-900">
+                            Косметология
+                          </Text>
+                          <Text size="3xl" as="p" className=" self-start !text-black-900">
+                            Офтальмология
+                          </Text>
+                        </div>
+                        <div className="flex md: mt-[54px] self-stretch justify-between ml-[350px] flex-col">
+                          <Text size="3xl" as="p" className="!text-black-900">
+                            Гастроэнтерология
+                          </Text>
+                          <Text size="3xl" as="p" className="!text-black-900">
+                            Нервология
+                          </Text>
+                          <Text size="3xl" as="p" className="!text-black-900">
+                            Педиатрия
+                          </Text>
+                        </div>
+                        <div className="">
+
+                        </div>
+                      </div>
+                      {/* <div className="flex md:flex-col self-stretch justify-between items-center mt-[54px] gap-5">
                         <div className="flex justify-between w-[66%] md:w-full gap-5 flex-wrap">
                           <Text size="3xl" as="p" className="self-end !text-black-900">
                             Акушерство-гинекология
@@ -192,10 +225,10 @@ export default function MainPage() {
                             Ревматология
                           </Text>
                         </div>
-                      </div>
+                        </div> */}
                     </div>
                   </div>
-                  <div className="flex flex-col self-end items-center mb-[7px] gap-[11px] border-black-900 border-l-[0.5px] border-solid">
+                  <div className="mb-[7px] flex flex-col items-center gap-[11px] self-end border-l-[0.5px] border-solid border-black-900">
                     <Button color="black_900" size="4xl" variant="outline" shape="square" className="w-[64px]">
                       <Img src="images/img_plus.svg" />
                     </Button>
@@ -209,16 +242,16 @@ export default function MainPage() {
             <div className="flex items-center justify-center h-screen">
               <Img src="images/map.svg"/>
             </div>
-            <div className="flex flex-col items-start w-full mt-[70px] gap-12 mx-auto md:p-5 max-w-[1306px]">
-              <Text size="8xl" as="p" className="!text-black-900 !font-lora">
+            <div className="mx-auto mt-[70px] flex w-full max-w-[1306px] flex-col items-start gap-12 md:p-5">
+              <Text size="8xl" as="p" className="!font-lora !text-black-900">
                 Наши специалисты
               </Text>
-              <div className="flex md:flex-col self-stretch ml-[31px] gap-[25px] md:ml-0">
-                <div className="flex flex-col items-start w-full">
+              <div className="ml-[31px] flex gap-[25px] self-stretch md:ml-0 md:flex-col">
+                <div className="flex w-full flex-col items-start">
                   <Img
                     src="images/img_rectangle_17.png"
                     alt="жуманова"
-                    className="h-[300px] w-full md:h-auto object-cover rounded-[10px]"
+                    className="h-[300px] w-full rounded-[10px] object-cover md:h-auto"
                   />
                   <Text size="3xl" as="p" className="mt-[18px] !text-black-900">
                     Жуманова Екатерина
@@ -227,11 +260,11 @@ export default function MainPage() {
                     Педиатор
                   </Text>
                 </div>
-                <div className="flex flex-col items-start w-full">
+                <div className="flex w-full flex-col items-start">
                   <Img
                     src="images/img_rectangle_18.png"
                     alt="image"
-                    className="h-[300px] w-full md:h-auto object-cover rounded-[10px]"
+                    className="h-[300px] w-full rounded-[10px] object-cover md:h-auto"
                   />
                   <Text size="3xl" as="p" className="mt-[18px] !text-black-900">
                     Руслова Анастасия
@@ -240,11 +273,11 @@ export default function MainPage() {
                     Онколог
                   </Text>
                 </div>
-                <div className="flex flex-col items-start w-full">
+                <div className="flex w-full flex-col items-start">
                   <Img
                     src="images/img_rectangle_19.png"
                     alt="image"
-                    className="h-[300px] w-full md:h-auto object-cover rounded-[10px]"
+                    className="h-[300px] w-full rounded-[10px] object-cover md:h-auto"
                   />
                   <Text size="3xl" as="p" className="mt-[18px] !text-black-900">
                     Туршов Алексей
@@ -253,11 +286,11 @@ export default function MainPage() {
                     Хирург-травматолог
                   </Text>
                 </div>
-                <div className="flex flex-col items-start w-full">
+                <div className="flex w-full flex-col items-start">
                   <Img
                     src="images/img_rectangle_20.png"
                     alt="image"
-                    className="h-[300px] w-full md:h-auto object-cover rounded-[10px]"
+                    className="h-[300px] w-full rounded-[10px] object-cover md:h-auto"
                   />
                   <Text size="3xl" as="p" className="mt-[18px] !text-black-900">
                     Шумко Валерия
@@ -268,23 +301,23 @@ export default function MainPage() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-end w-full mt-[105px] p-[55px] mx-auto md:p-5 bg-orange-50 max-w-[1265px]">
-              <div className="flex flex-col items-start w-[93%] md:w-full mb-[34px] mr-3.5 gap-[42px] md:mr-0">
-                <Text size="7xl" as="p" className="ml-[241px] md:ml-0 !text-black-900 !font-lora">
+            <div className="mx-auto mt-[105px] flex w-full max-w-[1265px] justify-end bg-orange-50 p-[55px] md:p-5">
+              <div className="mb-[34px] mr-3.5 flex w-[93%] flex-col items-start gap-[42px] md:mr-0 md:w-full">
+                <Text size="7xl" as="p" className="ml-[241px] !font-lora !text-black-900 md:ml-0">
                   Подпишитесь на рассылку
                 </Text>
-                <div className="flex md:flex-col self-stretch gap-[7px]">
+                <div className="flex gap-[7px] self-stretch md:flex-col">
                   <Input
                     shape="round"
                     name="электронная"
                     placeholder={`Электронная почта`}
-                    className="sm:px-5 border-gray-600 border border-solid flex-grow"
+                    className="flex-grow border border-solid border-gray-600 sm:px-5"
                   />
                   <Button
                     color="teal_400"
                     size="3xl"
                     shape="round"
-                    className="sm:px-5 border-gray-600 border border-solid min-w-[228px]"
+                    className="min-w-[228px] border border-solid border-gray-600 sm:px-5"
                   >
                     Подписаться
                   </Button>
@@ -293,14 +326,14 @@ export default function MainPage() {
             </div>
           </div>
         </div>
-        <footer className="mt-[152px] p-12 md:p-5 bg-teal-400">
-          <div className="w-full mt-0.5 mx-auto max-w-[1248px]">
-            <div className="flex md:flex-col justify-center items-center">
-              <div className="flex flex-col items-start w-full gap-[37px] bottom-[60px] relative">
+        <footer className="mt-[152px] flex items-center justify-center bg-teal-400 p-12 md:p-5">
+          <div className="mx-auto mt-0.5 flex w-full max-w-[1248px] justify-center">
+            <div className="flex w-full items-center justify-center md:flex-col">
+              <div className="relative bottom-[60px] flex w-full flex-col items-start gap-[37px]">
                 <Text size="5xl" as="p" className="!font-lora">
                   Карта сайта
                 </Text>
-                <div className="flex self-stretch justify-between items-center gap-5">
+                <div className="flex items-center justify-between gap-5 self-stretch">
                   <ul className="flex flex-col items-start gap-[18px]">
                     <li>
                       <a href="#">
@@ -347,9 +380,9 @@ export default function MainPage() {
                   </ul>
                 </div>
               </div>
-              <div className="flex flex-col items-start w-full mt-[25px] ml-[53px] gap-[76px] md:gap-[57px] md:ml-0 sm:gap-[38px]">
-                <div className="flex self-stretch justify-between items-center ml-[106px] gap-5 md:ml-0">
-                  <ul className="flex flex-col self-end items-start mb-[27px] gap-[18px] top-[30px] relative">
+              <div className="ml-[53px] mt-[25px] flex w-full flex-col items-start gap-[76px] md:ml-0 md:gap-[57px] sm:gap-[38px]">
+                <div className="ml-[106px] flex items-center justify-between gap-5 self-stretch md:ml-0">
+                  <ul className="relative top-[30px] mb-[27px] flex flex-col items-start gap-[18px] self-end">
                     <li>
                       <a href="#">
                         <Text as="p">Партнеры</Text>
@@ -377,22 +410,22 @@ export default function MainPage() {
                   Авторское право © 2024. Все права защищены
                 </Text>
               </div>
-              <div className="flex flex-col items-start w-full mt-1 ml-6 gap-11 bottom-[75px] md:ml-0 relative">
+              <div className="relative bottom-[75px] ml-6 mt-1 flex w-full flex-col items-start gap-11 md:ml-0">
                 <Text size="5xl" as="p" className="!font-lora">
                   Присоединяйтесь к нам
                 </Text>
-                <div className="flex justify-between w-[66%] md:w-full gap-5">
-                  <a href="#" shape="square" className="w-[45px]">
-                    <Img src="images/tg.svg" />
+                <div className="flex w-[66%] justify-between gap-5 md:w-full">
+                  <a href="#">
+                    <Img src="images/img_save.svg" />
                   </a>
-                  <a href="#" shape="square" className="w-[45px]">
-                    <Img src="images/vk.svg" />
+                  <a href="#">
+                    <Img src="images/img_close.svg" />
                   </a>
-                  <a href="#" shape="square" className="w-[45px]">
-                    <Img src="images/wh.svg" />
+                  <a href="#">
+                    <Img src="images/img_warning.svg" />
                   </a>
-                  <a href="#" shape="square" className="w-[45px]">
-                    <Img src="images/yb.svg" />
+                  <a href="#">
+                    <Img src="images/img_volume.svg" />
                   </a>
                 </div>
                 <Text size="5xl" as="p">

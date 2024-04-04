@@ -6,8 +6,11 @@ import Main from "pages/Main";
 import Lcpacient from "pages/Lcpacient";
 import Lcdoctor from "pages/Lcdoctor";
 import SignUPpacnum from "pages/SignUPpacnum";
+import SignUPpacemail from "pages/SignUPpacemail";
+import SignUPdocnum from "pages/SignUPdocnum";
+import SignUPdocemail from "pages/SignUPdocemail";
 
-const ProjectRoutes = () => {
+function ProjectRoutes() {
   let element = useRoutes([
     { path: "/", element: <Main /> },
     { path: "*", element: <NotFound /> },
@@ -27,9 +30,21 @@ const ProjectRoutes = () => {
       path: "signuppacnum",
       element: <SignUPpacnum />,
     },
+    {
+      path: "signuppacemail",
+      element: <SignUPpacemail />,
+    },
+    {
+      path: "signuppdocnum",
+      element: <SignUPdocnum />,
+    },
+    {
+      path: "signuppdocemail",
+      element: <SignUPdocemail />,
+    }
   ]);
 
   return element;
-};
+}
 
 export default ProjectRoutes;
